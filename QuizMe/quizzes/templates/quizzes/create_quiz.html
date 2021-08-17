@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="create_quiz">
+    <h2>Create A Quiz</h2>
+    <form class="site-form" action="{% url 'quizzes:create-quiz-view' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input class="btn btn-primary" type="submit" value="Create">
+    </form>
+</div>
+
+
+{% endblock content %}
